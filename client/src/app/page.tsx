@@ -12,6 +12,8 @@ const CreateIssuePage: React.FC = () => {
     description: string;
   }
 
+  const hrStyle = { margin: '20px' };
+
   const handleCreateIssue = async (event: React.FormEvent) => {
     event.preventDefault();
     const title = (event.target as HTMLFormElement).title.value;
@@ -128,6 +130,8 @@ const CreateIssuePage: React.FC = () => {
         </form>
       </div>
 
+      <hr style={hrStyle} />
+
       {/* A button that search on backend for all issue and print it on a simples table*/}
       <div>
         <button onClick={handleGetAllIssues}>Get All Issues</button>
@@ -153,6 +157,8 @@ const CreateIssuePage: React.FC = () => {
         </table>
       </div>
 
+      <hr style={hrStyle} />
+
       <div>
         <h1>Update Issue</h1>
         <form onSubmit={handleUpdateIssue}>
@@ -171,7 +177,7 @@ const CreateIssuePage: React.FC = () => {
           <button type="submit">Update Issue</button>
         </form>
       </div>
-
+      <hr style={hrStyle} />
       <div>
         <h1>Delete Issue</h1>
         <form onSubmit={handleDeleteIssue}>
