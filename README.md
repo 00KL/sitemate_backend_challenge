@@ -20,6 +20,5 @@ A a simple REST API Server + Client for Issues (id, title + description) for Sit
 
 ## CLient
 
-1. On the folder client: `yarn install``
-2. `yarn build`
-3. `yarn start`
+1. On the folder client: `npm install`
+2. `npx next dev`

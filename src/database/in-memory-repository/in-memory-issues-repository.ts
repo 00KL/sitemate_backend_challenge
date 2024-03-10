@@ -1,5 +1,4 @@
 import { Issue } from 'src/issues/entities/issue.entity';
-import { randomUUID } from 'crypto';
 
 export class InMemoryIssuesRepository {
   private issues: Issue[];
@@ -8,7 +7,10 @@ export class InMemoryIssuesRepository {
     this.issues = [];
   }
   create(createIssueDto) {
-    const issue = Object.assign({ id: randomUUID() }, createIssueDto);
+    const issue = Object.assign(
+      { id: (this.issues.length + 1).toString() },
+      createIssueDto,
+    );
     this.issues.push(issue);
     return issue;
   }
